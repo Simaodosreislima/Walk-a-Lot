@@ -5,7 +5,7 @@
 
 ## Description
 
-A database of walking routes where users can upload their walks with comments and pictures of interesting things to see. **_---Other users can search, interact, share, comment and contribute with their walks.---_**
+A database of walking routes where users can upload their walks start and end points with comments and pictures of interesting things to see. **_---Other users can search, interact, share, comment and contribute with their walks.---_**
 
 <br>
 
