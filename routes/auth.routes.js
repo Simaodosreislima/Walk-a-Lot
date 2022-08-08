@@ -1,35 +1,35 @@
-const router = require("express").Router();
+const router = require('express').Router();
 
 // ℹ️ Handles password encryption
-const bcrypt = require("bcrypt");
-const mongoose = require("mongoose");
+const bcrypt = require('bcrypt');
+const mongoose = require('mongoose');
 
 // How many rounds should bcrypt run the salt (default [10 - 12 rounds])
 const saltRounds = 10;
 
 // Require the User model in order to interact with the database
-const User = require("../models/User.model");
+const User = require('../models/User.model');
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
+const isLoggedOut = require('../middleware/isLoggedOut');
+const isLoggedIn = require('../middleware/isLoggedIn');
 
-router.get("/signup", isLoggedOut, (req, res) => {
-  res.render("auth/signup");
+router.get('/signup', isLoggedOut, (req, res) => {
+  res.render('auth/signup');
 });
 
-router.post("/signup", isLoggedOut, (req, res) => {
+router.post('/signup', isLoggedOut, (req, res) => {
   const { username, password, firstName, lastName, email } = req.body;
 
   if (!username) {
-    return res.status(400).render("auth/signup", {
-      errorMessage: "Please provide your username.",
+    return res.status(400).render('auth/signup', {
+      errorMessage: 'Please provide your username.',
     });
   }
 
   if (password.length < 8) {
-    return res.status(400).render("auth/signup", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
+    return res.status(400).render('auth/signup', {
+      errorMessage: 'Your password needs to be at least 8 characters long.',
     });
   }
 
@@ -51,7 +51,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth/signup", { errorMessage: "Username already taken." });
+        .render('auth/signup', { errorMessage: 'Username already taken.' });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -71,45 +71,45 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
-        res.redirect("/");
+        res.redirect('/main');
       })
       .catch((error) => {
         if (error instanceof mongoose.Error.ValidationError) {
           return res
             .status(400)
-            .render("auth/signup", { errorMessage: error.message });
+            .render('auth/signup', { errorMessage: error.message });
         }
         if (error.code === 11000) {
-          return res.status(400).render("auth/signup", {
+          return res.status(400).render('auth/signup', {
             errorMessage:
-              "Username need to be unique. The username you chose is already in use.",
+              'Username need to be unique. The username you chose is already in use.',
           });
         }
         return res
           .status(500)
-          .render("auth/signup", { errorMessage: error.message });
+          .render('auth/signup', { errorMessage: error.message });
       });
   });
 });
 
-router.get("/login", isLoggedOut, (req, res) => {
-  res.render("auth/login");
+router.get('/login', isLoggedOut, (req, res) => {
+  res.render('auth/login');
 });
 
-router.post("/login", isLoggedOut, (req, res, next) => {
+router.post('/login', isLoggedOut, (req, res, next) => {
   const { username, password } = req.body;
 
   if (!username) {
-    return res.status(400).render("auth/login", {
-      errorMessage: "Please provide your username.",
+    return res.status(400).render('auth/login', {
+      errorMessage: 'Please provide your username.',
     });
   }
 
   // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
   if (password.length < 8) {
-    return res.status(400).render("auth/login", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
+    return res.status(400).render('auth/login', {
+      errorMessage: 'Your password needs to be at least 8 characters long.',
     });
   }
 
@@ -118,21 +118,21 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     .then((user) => {
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
-        return res.status(400).render("auth/login", {
-          errorMessage: "Wrong credentials.",
+        return res.status(400).render('auth/login', {
+          errorMessage: 'Wrong credentials.',
         });
       }
 
       // If user is found based on the username, check if the in putted password matches the one saved in the database
       bcrypt.compare(password, user.password).then((isSamePassword) => {
         if (!isSamePassword) {
-          return res.status(400).render("auth/login", {
-            errorMessage: "Wrong credentials.",
+          return res.status(400).render('auth/login', {
+            errorMessage: 'Wrong credentials.',
           });
         }
         req.session.user = user;
-        // req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
-        return res.redirect("/");
+        //req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
+        return res.redirect('/main');
       });
     })
 
@@ -144,14 +144,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
     });
 });
 
-router.get("/logout", isLoggedIn, (req, res) => {
+router.get('/logout', isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res
         .status(500)
-        .render("auth/logout", { errorMessage: err.message });
+        .render('auth/logout', { errorMessage: err.message });
     }
-    res.redirect("/");
+    res.redirect('/');
   });
 });
 
