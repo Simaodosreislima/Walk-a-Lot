@@ -33,6 +33,7 @@ const userSchema = new Schema(
       required: [true, "Last name is required"],
       trim: true,
     },
+    walkCards: [{ type: Schema.Types.ObjectId, ref: "Card" }]
     /*     profileImg: {
           type: String,
           default: "",

@@ -1,0 +1,15 @@
+<div>
+  <form action="/cards/create" method="post" enctype="multipart/form-data">
+    <label> Title:
+      <input type="text" name="title" id="title">
+    </label>
+    <label> Description:
+      <input type="textarea" name="description" id="description" cols="30" rows="10">
+    </label>
+    <label for="cardImageUrl"> Card Image:
+      <input type="file" name="cardImageUrl" id="cardImageUrl">
+    </label>
+
+    <button type="submit">Create Card</button>
+  </form>
+</div>

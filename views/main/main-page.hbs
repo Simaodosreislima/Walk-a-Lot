@@ -6,3 +6,15 @@
   {{user.username}}
   and you're email is
   {{user.email}}</p>
+<button><a href='/cards/create'>Create card</a></button>
+
+{{#each cards}}
+<div>
+  <img src="{{cardImageUrl}}" alt="{{title}}">
+  <div>
+    <h5>{{title}}</h5>
+    <p>{{description}}</p>
+  </div>
+</div>
+
+{{/each}}
