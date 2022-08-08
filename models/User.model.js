@@ -33,12 +33,12 @@ const userSchema = new Schema(
       required: [true, "Last name is required"],
       trim: true,
     },
-    profileImg: {
-      type: String,
-      default: "",
-    },
-    walkCards:
-      [{ type: Schema.Types.ObjectId, ref: "Card" }],
+    /*     profileImg: {
+          type: String,
+          default: "",
+        },
+        walkCards:
+          [{ type: Schema.Types.ObjectId, ref: "Card" }], */
 
     //missing card array - returns cards that user has created
 
