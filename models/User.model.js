@@ -37,6 +37,7 @@ const userSchema = new Schema(
       trim: true,
     },
     walkCards: [{ type: Schema.Types.ObjectId, ref: 'Card' }],
+
     profileImg: {
       type: String,
       default:

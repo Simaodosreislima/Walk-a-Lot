@@ -9,6 +9,7 @@ const saltRounds = 10;
 
 // Require the User model in order to interact with the database
 const User = require('../models/User.model');
+const fileUploader = require('../config/cloudinary.config');
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require('../middleware/isLoggedOut');
@@ -157,24 +158,34 @@ router.get('/logout', isLoggedIn, (req, res) => {
 });
 
 router.get('/profile', isLoggedIn, (req, res, next) => {
-  User.findById(req.session.user._id).then((user) =>
-    res.render('main/profile', user)
-  );
+  User.findById(req.session.user._id)
+    .then((user) =>
+      res.render('main/profile', user)
+    );
 });
 
 router.get('/profile/:id/edit', isLoggedIn, (req, res, next) => {
-  User.findById(req.session.user_id)
-    .then(() => res.render('main/profile-edit'))
+  User.findById(req.session.user._id)
+    .then((user) => res.render('main/profile-edit', user))
     .catch((err) => next(err));
 });
 
-router.post('/profile/:id/edit', isLoggedIn, (req, res, next) => {
+router.post('/profile/:id/edit', isLoggedIn, fileUploader.single("profileImg"), (req, res, next) => {
   const { id } = req.params;
-  const { firstName, lastName, profileImg } = req.body;
-
-  User.findByIdAndUpdate(id, { firstName, lastName, profileImg })
-    .then(() => res.redirect('/profile'))
-    .catch((err) => next(err));
+  const { firstName, lastName } = req.body;
+  if (!req.file) {
+    User.findByIdAndUpdate(id, { firstName, lastName })
+      .then(() => {
+        return res.redirect("/profile");
+      })
+      .catch((err) => next(err));
+  } else {
+    const profileImg = req.file.path;
+    User.findByIdAndUpdate(id, { firstName, lastName, profileImg })
+      .then(() => {
+        return res.redirect("/profile");
+      })
+  }
 });
 
 module.exports = router;

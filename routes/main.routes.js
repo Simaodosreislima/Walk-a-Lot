@@ -86,4 +86,17 @@ router.get('/main', isLoggedIn, (req, res, next) => {
     .catch((err) => next(err));
 });
 
+router.get('/allUsers', isLoggedIn, (req, res, next) => {
+  User.find()
+    .then((users) => {
+      res.render('main/all-users', { users });
+    })
+    .catch((err) => next(err));
+});
+
+
+
+
+
 module.exports = router;
+
