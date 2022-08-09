@@ -37,8 +37,45 @@ router.post(
         })
         .catch((err) => next(err));
     }
+  });
+
+router.get("/main/:id/edit", (req, res, next) => {
+  const { id } = req.params;
+
+  Card.findById(id)
+    .then((card) => res.render("main/cards/card-edit", card))
+    .catch((err) => next(err));
+})
+
+router.post('/main/:id/edit', fileUploader.single('cardImageUrl'), (req, res, next) => {
+  const { id } = req.params;
+  const { title, description, previousUrl } = req.body;
+
+  let cardImageUrl;
+
+  if (req.file) {
+    cardImageUrl = req.file.path;
+  } else {
+    cardImageUrl = previousUrl;
   }
-);
+
+  Card.findByIdAndUpdate(id, { title, description, cardImageUrl })
+    .then(() => res.redirect('/main'))
+    .catch((err) => next(err));
+});
+
+router.post("/main/:id/delete", (req, res, next) => {
+  const { id } = req.params;
+
+  Card.findByIdAndDelete(id)
+    .then(() => {
+      //Add card _id to cardsArray from user
+      return User.findByIdAndUpdate(req.session.user._id, {
+        $pull: { walkCards: id },
+      }).then(() => res.redirect('/main'));
+    })
+    .catch((err) => next(err));
+})
 
 router.get('/main', isLoggedIn, (req, res, next) => {
   User.findById(req.session.user._id)

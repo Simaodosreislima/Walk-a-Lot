@@ -1,0 +1,15 @@
+<div>
+  <form action="/main/{{id}}/edit" method="post" enctype="multipart/form-data">
+    <label> Title:
+      <input type="text" name="title" id="title" value="{{title}}">
+    </label>
+    <label for="description"> Description: </label>
+    <textarea name="description" id="description" cols="30" rows="10">{{description}}</textarea>
+    <label for="cardImageUrl"> Card Image: </label>
+    <input type="file" name="cardImageUrl" id="cardImageUrl">
+    <input type="text" name="previousUrl" value="{{cardImageUrl}}" hidden>
+
+
+    <button type="submit">Save changes</button>
+  </form>
+</div>
