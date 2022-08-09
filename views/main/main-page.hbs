@@ -1,19 +1,23 @@
-<h1>Main Page</h1>
+<div class="main-page">
+  <h1>Hi {{firstName}}!</h1>
 
-<p>Hello
-  {{firstName}}
-  {{lastName}}, you're username is
-  {{username}}
-  and you're email is
-  {{email}}</p>
-<button><a href='/cards/create'>Create card</a></button>
+  {{!-- <p>Hello
+    {{firstName}}
+    {{lastName}}, you're username is
+    {{username}}
+    and you're email is
+    {{email}}</p> --}}
+  <button><a href='/cards/create'>New Walk</a></button>
 
-{{#each walkCards}}
-  <div>
-    <img src='{{cardImageUrl}}' alt='{{title}}' />
-    <div>
+  <div class="main-page-container">
+
+    {{#each walkCards}}
+    <div class="card">
+      <div class="card-image">
+        <img src='{{cardImageUrl}}' alt='{{title}}' />
+      </div>
       <h5>{{title}}</h5>
-      <p>{{description}}</p>
+      <span>{{description}}</span>
       <button><a href='/main/{{id}}/details'>View Details</a></button>
       {{!-- <form action='/main/{{_id}}/delete' method='post'>
         <button>Delete walk</button>
@@ -21,6 +25,6 @@
       </form> --}}
 
     </div>
+    {{/each}}
   </div>
-
-{{/each}}
+</div>

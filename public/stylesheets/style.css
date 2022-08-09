@@ -2,6 +2,7 @@
   font-family: 'Source Sans Pro', sans-serif;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body,
@@ -57,4 +58,133 @@ li a:hover {
   justify-content: center;
   align-items: center;
   height: 40px;
+}
+
+/* ---------------------------------------- Sign up and login styles -------------------------------------------------- */
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 25vh;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 2px solid cornsilk;
+  color: cornsilk;
+  box-shadow: 5px 7px 10px cornsilk;
+  width: 25vw;
+  height: 50vh;
+  border-radius: 10%;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.form input {
+  border: 1px solid cornsilk;
+  border-radius: 5px;
+  height: 5vh;
+  width: 15vw;
+  color: cornsilk;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.form input[type="text"],
+input[type="password"],
+input[type="email"] {
+  text-align: center;
+}
+
+.form::placeholder {
+  color: cornsilk;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.form button {
+  all: unset;
+  border: 1px solid cornsilk;
+  border-radius: 5px;
+  width: 5vw;
+  padding: 1vh 1vw;
+  text-align: center;
+  box-shadow: 1px 3px 4px cornsilk;
+}
+
+.form button:hover {
+  border: 1px solid lightsteelblue;
+  background-color: cornsilk;
+  color: #0F2027;
+}
+
+/* 
+----------------------------------------------Main page styles -------------------------------------------- */
+.main-page {
+  width: 100vw;
+  height: fit-content;
+  background-color: cornsilk;
+}
+
+
+.main-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border: 1px solid cornsilk;
+  border-radius: 5px;
+  width: 20vw;
+  height: 50vh;
+  margin: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  height: 25vh;
+  /*   height: 30vh; */
+  flex-grow: 1;
+  object-fit: contain;
+
 }
