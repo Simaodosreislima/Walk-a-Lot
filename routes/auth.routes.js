@@ -13,6 +13,7 @@ const User = require('../models/User.model');
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require('../middleware/isLoggedOut');
 const isLoggedIn = require('../middleware/isLoggedIn');
+const e = require('express');
 
 router.get('/signup', isLoggedOut, (req, res) => {
   res.render('auth/signup');
@@ -153,6 +154,27 @@ router.get('/logout', isLoggedIn, (req, res) => {
     }
     res.redirect('/');
   });
+});
+
+router.get('/profile', isLoggedIn, (req, res, next) => {
+  User.findById(req.session.user._id).then((user) =>
+    res.render('main/profile', user)
+  );
+});
+
+router.get('/profile/:id/edit', isLoggedIn, (req, res, next) => {
+  User.findById(req.session.user_id)
+    .then(() => res.render('main/profile-edit'))
+    .catch((err) => next(err));
+});
+
+router.post('/profile/:id/edit', isLoggedIn, (req, res, next) => {
+  const { id } = req.params;
+  const { firstName, lastName, profileImg } = req.body;
+
+  User.findByIdAndUpdate(id, { firstName, lastName, profileImg })
+    .then(() => res.redirect('/profile'))
+    .catch((err) => next(err));
 });
 
 module.exports = router;

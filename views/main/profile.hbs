@@ -1,0 +1,12 @@
+<h1>Profile</h1>
+
+<h4>First Name: {{firstName}}</h4>
+<h4>Last Name: {{lastName}}</h4>
+<h4>Username: {{username}}</h4>
+<h4>Email: {{email}}</h4>
+
+<img src='{{profileImg}}' />
+<br>
+<button><a href="/profile/{{id}}/edit">Edit Profile</a></button>
+    <form action="/profile/{{_id}}/delete" method="post">
+      <button>Delete Profile</button>
