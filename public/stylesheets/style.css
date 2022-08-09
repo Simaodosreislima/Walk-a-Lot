@@ -4,20 +4,22 @@
   padding: 0;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #948E99;
+  background: #948e99;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2E1437, #948E99);
+  background: -webkit-linear-gradient(to right, #2e1437, #948e99);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2E1437, #948E99);
+  background: linear-gradient(to right, #2e1437, #948e99);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
 }
 
 ul:hover {
@@ -40,4 +42,19 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
+}
+
+.bg {
+  background-image: url('https://res.cloudinary.com/dvzekm9zq/image/upload/v1660065359/cards/caminhada_dx5jzw.jpg');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logoImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
 }
