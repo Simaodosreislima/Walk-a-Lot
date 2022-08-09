@@ -158,10 +158,9 @@ router.get('/logout', isLoggedIn, (req, res) => {
 });
 
 router.get('/profile', isLoggedIn, (req, res, next) => {
-  User.findById(req.session.user._id)
-    .then((user) =>
-      res.render('main/profile', user)
-    );
+  User.findById(req.session.user._id).then((user) =>
+    res.render('main/profile', user)
+  );
 });
 
 router.get('/profile/:id/edit', isLoggedIn, (req, res, next) => {
@@ -170,22 +169,41 @@ router.get('/profile/:id/edit', isLoggedIn, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.post('/profile/:id/edit', isLoggedIn, fileUploader.single("profileImg"), (req, res, next) => {
-  const { id } = req.params;
-  const { firstName, lastName } = req.body;
-  if (!req.file) {
-    User.findByIdAndUpdate(id, { firstName, lastName })
-      .then(() => {
-        return res.redirect("/profile");
-      })
-      .catch((err) => next(err));
-  } else {
-    const profileImg = req.file.path;
-    User.findByIdAndUpdate(id, { firstName, lastName, profileImg })
-      .then(() => {
-        return res.redirect("/profile");
-      })
+router.post(
+  '/profile/:id/edit',
+  isLoggedIn,
+  fileUploader.single('profileImg'),
+  (req, res, next) => {
+    const { id } = req.params;
+    const { firstName, lastName } = req.body;
+    if (!req.file) {
+      User.findByIdAndUpdate(id, { firstName, lastName })
+        .then(() => {
+          return res.redirect('/profile');
+        })
+        .catch((err) => next(err));
+    } else {
+      const profileImg = req.file.path;
+      User.findByIdAndUpdate(id, { firstName, lastName, profileImg }).then(
+        () => {
+          return res.redirect('/profile');
+        }
+      );
+    }
   }
+);
+
+router.post('/profile/:id/delete', isLoggedIn, (req, res, next) => {
+  User.findByIdAndDelete(req.session.user._id).then(() => {
+    req.session.destroy((err) => {
+      if (err) {
+        return res
+          .status(500)
+          .render('auth/logout', { errorMessage: err.message });
+      }
+      res.redirect('/');
+    });
+  });
 });
 
 module.exports = router;

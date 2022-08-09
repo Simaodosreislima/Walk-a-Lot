@@ -1,0 +1,48 @@
+<div>
+  <img src='{{cardImageUrl}}' alt='{{title}}' />
+  <div>
+    <h5>{{title}}</h5>
+    <p>{{description}}</p>
+    <button><a href='/main/{{id}}/edit'>Edit Walk</a></button>
+    <form action='/main/{{_id}}/delete' method='post'>
+      <button>Delete walk</button>
+
+    </form>
+
+  </div>
+
+
+<div>
+  {{content}}
+  <hr />
+  by:
+  {{author.username}}
+</div>
+
+{{#unless comments}}
+  <h6>No comments on this post yet!</h6>
+{{/unless}}
+<ul>
+
+  {{#each comments}}
+    <li>
+
+      {{this.author.username}}
+      -
+      {{this.content}}
+    </li>
+  {{/each}}
+</ul>
+
+<h3>Add a comment</h3>
+<form action='/cards/{{id}}/comment' method='post'>
+  <label for='author'>Author</label>
+  <input type='text' name='authorName' id='author' />
+
+  <textarea name='content' id='content' cols='30' rows='10'></textarea>
+
+  <button type='submit'>Comment</button>
+</form>
+
+
+

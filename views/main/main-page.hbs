@@ -9,23 +9,18 @@
 <button><a href='/cards/create'>Create card</a></button>
 
 {{#each walkCards}}
-<div>
-  <img src='{{cardImageUrl}}' alt='{{title}}' />
   <div>
-    <h5>{{title}}</h5>
-    <p>{{description}}</p>
-    <button><a href="/main/{{id}}/edit">Edit Card</a></button> {{!-- verificar se bate certo --}}
-    <form action="/main/{{_id}}/delete" method="post">
-      <button>Delete walk</button>
+    <img src='{{cardImageUrl}}' alt='{{title}}' />
+    <div>
+      <h5>{{title}}</h5>
+      <p>{{description}}</p>
+      <button><a href='/main/{{id}}/details'>View Details</a></button>
+      {{!-- <form action='/main/{{_id}}/delete' method='post'>
+        <button>Delete walk</button>
 
-    </form>
+      </form> --}}
 
-
-
-
-
-    {{!-- <button><a href="/main/{{id}}/delete">Delete Card</a></button> --}}
+    </div>
   </div>
-</div>
 
 {{/each}}

@@ -1,5 +1,9 @@
 const { Schema, model } = require('mongoose');
 
+function capitalize(val) {
+  return val[0].toUpperCase() + val.slice(1).toLowerCase();
+}
+
 const userSchema = new Schema(
   {
     username: {
@@ -30,11 +34,13 @@ const userSchema = new Schema(
       type: String,
       required: [true, 'First name is required'],
       trim: true,
+      set: capitalize,
     },
     lastName: {
       type: String,
       required: [true, 'Last name is required'],
       trim: true,
+      set: capitalize,
     },
     walkCards: [{ type: Schema.Types.ObjectId, ref: 'Card' }],
 
