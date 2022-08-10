@@ -47,7 +47,7 @@ const userSchema = new Schema(
     profileImg: {
       type: String,
       default:
-        'https://i.pinimg.com/originals/62/4b/bb/624bbbf5b3c8a293950c8ed24a0c4eef.jpg',
+        'https://res.cloudinary.com/dvzekm9zq/image/upload/v1660147231/cards/avatar_bpem8o.png',
     },
   },
 

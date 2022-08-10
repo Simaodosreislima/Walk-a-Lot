@@ -1,20 +1,22 @@
 const isLoggedIn = require('../middleware/isLoggedIn');
+const isLoggedOut = require('../middleware/isLoggedOut');
 const Card = require('../models/Card.model');
 const fileUploader = require('../config/cloudinary.config');
 const { route } = require('./auth.routes');
 const User = require('../models/User.model');
-const Comment = require("../models/Comment.model");
+const Comment = require('../models/Comment.model');
 
 const router = require('express').Router();
 
 /* GET main page */
-router.get('/cards/create', (req, res, next) => {
+router.get('/cards/create', isLoggedIn, (req, res, next) => {
   res.render('main/cards/card-create');
 });
 
 router.post(
   '/cards/create',
   fileUploader.single('cardImageUrl'),
+  isLoggedIn,
   (req, res, next) => {
     const { title, description } = req.body;
     const userId = req.session.user._id;
@@ -41,9 +43,7 @@ router.post(
   }
 );
 
-
-
-router.get('/main/:id/edit', (req, res, next) => {
+router.get('/main/:id/edit', isLoggedIn, (req, res, next) => {
   const { id } = req.params;
 
   Card.findById(id)
@@ -54,6 +54,7 @@ router.get('/main/:id/edit', (req, res, next) => {
 router.post(
   '/main/:id/edit',
   fileUploader.single('cardImageUrl'),
+  isLoggedIn,
   (req, res, next) => {
     const { id } = req.params;
     const { title, description, previousUrl } = req.body;
@@ -72,8 +73,10 @@ router.post(
   }
 );
 
-router.post("/cards/:id/details",
-  fileUploader.single("walkPhotoUrl"),
+router.post(
+  '/cards/:id/details',
+  fileUploader.single('walkPhotoUrl'),
+  isLoggedIn,
   (req, res, next) => {
     const { id } = req.params;
     const { previousUrl } = req.body;
@@ -87,15 +90,17 @@ router.post("/cards/:id/details",
 
     Card.findByIdAndUpdate(id, { walkPhotoUrl })
       .then((newPhoto) => {
-        $push: { walkPhotoUrl: newPhoto._id }
+        $push: {
+          walkPhotoUrl: newPhoto._id;
+        }
       })
-      .then(() => res.redirect("/main/cards/card-details", id))
+      .then(() => res.redirect('/main/cards/card-details', id))
 
       .catch((err) => next(err));
-  })
+  }
+);
 
-
-router.post('/main/:id/delete', (req, res, next) => {
+router.post('/main/:id/delete', isLoggedIn, (req, res, next) => {
   const { id } = req.params;
 
   Card.findByIdAndDelete(id)
@@ -125,7 +130,7 @@ router.get('/allUsers', isLoggedIn, (req, res, next) => {
     .catch((err) => next(err));
 });
 
-router.get('/main/:id/details', (req, res, next) => {
+router.get('/main/:id/details', isLoggedIn, (req, res, next) => {
   const { id } = req.params;
 
   Card.findById(id)
@@ -140,8 +145,5 @@ router.get('/main/:id/details', (req, res, next) => {
     .then((card) => res.render('main/cards/card-details', card))
     .catch((err) => next(err));
 });
-
-
-
 
 module.exports = router;

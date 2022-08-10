@@ -15,7 +15,7 @@ const cardSchema = new Schema(
     cardImageUrl: {
       type: String,
       default:
-        'https://i.pinimg.com/originals/62/4b/bb/624bbbf5b3c8a293950c8ed24a0c4eef.jpg',
+        'https://res.cloudinary.com/dvzekm9zq/image/upload/v1660147132/cards/walking-default_uv09ne.webp',
     },
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
     walkPhotoUrl: [String],

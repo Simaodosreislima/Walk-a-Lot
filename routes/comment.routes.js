@@ -3,23 +3,24 @@ const router = require('express').Router();
 const User = require('../models/User.model');
 const Card = require('../models/Card.model');
 const Comment = require('../models/Comment.model');
+const isLoggedIn = require('../middleware/isLoggedIn');
 
-router.post('/cards/:id/comment', async (req, res, next) => {
+router.post('/cards/:id/comment', isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   const { content } = req.body;
   const user = req.session.user;
 
   try {
-    const createdComment = await Comment.create({ author: user._id, content })
+    const createdComment = await Comment.create({ author: user._id, content });
 
     await Card.findByIdAndUpdate(id, {
       $push: {
-        comments: createdComment._id
-      }
-    })
-    res.redirect(`/main/${id}/details`)
+        comments: createdComment._id,
+      },
+    });
+    res.redirect(`/main/${id}/details`);
   } catch (error) {
-    next(error)
+    next(error);
   }
 
   //getting the user first

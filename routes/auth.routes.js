@@ -173,6 +173,7 @@ router.post(
   '/profile/:id/edit',
   isLoggedIn,
   fileUploader.single('profileImg'),
+  isLoggedIn,
   (req, res, next) => {
     const { id } = req.params;
     const { firstName, lastName } = req.body;
