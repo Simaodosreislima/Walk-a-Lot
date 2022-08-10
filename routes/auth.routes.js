@@ -150,6 +150,7 @@ router.post('/login', isLoggedOut, (req, res, next) => {
 });
 
 router.get('/logout', isLoggedIn, (req, res) => {
+  req.app.locals.loggedInUser = null;
   req.session.destroy((err) => {
     if (err) {
       return res
