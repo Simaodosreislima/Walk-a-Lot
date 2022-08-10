@@ -48,3 +48,13 @@
     <input type="file" name="imageUrl" id="imageUrl">
     <button type="submit">Upload Photo</button>
   </form>
+
+
+
+      {{#each walkPhotoUrl}}
+    <div class="card">
+      <div class="card-image">
+        <img src='{{this}}' />
+      </div>
+    </div>
+    {{/each}}
