@@ -24,15 +24,14 @@
               src='https://res.cloudinary.com/dvzekm9zq/image/upload/v1660067817/cards/walk-a-lot-logo_vyx6q2.png'
               alt='Walk a Lot Logo'
             /></a></li>
-        {{#unless username}}
-          <li><a href='/signup'>Signup</a></li>
-          <li><a href='/login'>Login</a></li>
-        {{/unless}}
-        {{#if username}}
+        {{#if loggedInUser}}
           <li><a href='/main'>My walks</a></li>
           <li><a href='/profile'> My Profile</a></li>
           <li><a href='/allUsers'>All Users</a></li>
           <li><a href='/logout'>Logout</a></li>
+        {{else}}
+          <li><a href='/signup'>Signup</a></li>
+          <li><a href='/login'>Login</a></li>
         {{/if}}
       </ul>
     </nav>

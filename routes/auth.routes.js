@@ -73,6 +73,7 @@ router.post('/signup', isLoggedOut, (req, res) => {
       .then((user) => {
         // Bind the user to the session object
         req.session.user = user;
+        req.app.locals.loggedInUser = user;
         res.redirect('/main');
       })
       .catch((error) => {
@@ -133,6 +134,8 @@ router.post('/login', isLoggedOut, (req, res, next) => {
           });
         }
         req.session.user = user;
+        req.app.locals.loggedInUser = user;
+
         //req.session.user = user._id; // ! better and safer but in this case we saving the entire user object
         return res.redirect('/main');
       });
@@ -195,6 +198,7 @@ router.post(
 );
 
 router.post('/profile/:id/delete', isLoggedIn, (req, res, next) => {
+  req.app.locals.loggedInUser = null;
   User.findByIdAndDelete(req.session.user._id).then(() => {
     req.session.destroy((err) => {
       if (err) {

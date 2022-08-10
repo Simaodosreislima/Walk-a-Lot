@@ -1,15 +1,26 @@
-<div>
-  <form action="/main/{{_id}}/edit" method="post" enctype="multipart/form-data">
-    <label> Title:
-      <input type="text" name="title" id="title" value="{{title}}">
-    </label>
-    <label for="description"> Description: </label>
-    <textarea name="description" id="description" cols="30" rows="10">{{description}}</textarea>
-    <label for="cardImageUrl"> Card Image: </label>
-    <input type="file" name="cardImageUrl" id="cardImageUrl">
-    <input type="text" name="previousUrl" value="{{cardImageUrl}}" hidden>
+<h1 class='greeting'>Edit walk</h1>
+<div class='card-create-container'>
+  <div class='card-create-form'>
+    <form
+      action='/main/{{_id}}/edit'
+      method='post'
+      enctype='multipart/form-data'
+    >
+      <label for='title'>Title</label>
+      <input type='text' name='title' id='title' value='{{title}}' />
+      <label for='description'> Description </label>
+      <textarea
+        name='description'
+        id='description'
+        cols='30'
+        rows='10'
+      >{{description}}</textarea>
+      <label class='choose-photo' for='cardImageUrl'> Change image </label>
+      <input type='file' name='cardImageUrl' id='cardImageUrl' />
+      <input type='text' name='previousUrl' value='{{cardImageUrl}}' hidden />
 
+      <button class='create-walk-btn' type='submit'>Save changes</button>
+    </form>
 
-    <button type="submit">Save changes</button>
-  </form>
+  </div>
 </div>

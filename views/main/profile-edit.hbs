@@ -1,10 +1,27 @@
-<form action="/profile/{{_id}}/edit" method="post" enctype="multipart/form-data">
-  <label for="firstName">First Name:</label>
-  <input type="text" name="firstName" id="firstName" value="{{firstName}}">
-  <label for="lastName">Last Name:</label>
-  <input type="text" name="lastName" id="lastName" value="{{lastName}}">
-  <label for="profileImg">upload new profile picture</label>
-  <input type="file" name="profileImg" id="profileImg">
-  <button type="submit">Save changes</button>
+<h1 class='greeting'>Edit Profile</h1>
 
-</form>
+<div class='card-create-container'>
+  <div class='card-create-form'>
+
+    <form
+      action='/profile/{{_id}}/edit'
+      method='post'
+      enctype='multipart/form-data'
+    >
+      <label for='firstName'>First Name:</label>
+      <input
+        type='text'
+        name='firstName'
+        id='firstName'
+        value='{{firstName}}'
+      />
+      <label for='lastName'>Last Name:</label>
+      <input type='text' name='lastName' id='lastName' value='{{lastName}}' />
+      <label class='choose-profile-picture' for='profileImg'>Upload new photo</label>
+      <input type='file' name='profileImg' id='profileImg' />
+      <button class='create-profile-btn' type='submit'>Save changes</button>
+
+    </form>
+
+  </div>
+</div>
