@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -43,7 +42,7 @@ li a:hover {
 
 .bg {
   background-image: url('https://res.cloudinary.com/dvzekm9zq/image/upload/v1660065359/cards/caminhada_dx5jzw.jpg');
-  height: 100%;
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -54,4 +53,39 @@ li a:hover {
   justify-content: center;
   align-items: center;
   height: 40px;
+}
+
+.tagline {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80vw;
+
+  text-shadow: 2px 2px 4px #333;
+  color: white;
+  font-size: 6em;
+}
+
+.signupBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  background-color: #ea4c89;
+  border-radius: 30px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  width: 250px;
+  height: 60px;
+}
+
+.signupBtn:hover,
+.signupBtn:focus {
+  background-color: #f082ac;
 }
