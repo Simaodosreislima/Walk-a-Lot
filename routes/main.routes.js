@@ -3,6 +3,7 @@ const Card = require('../models/Card.model');
 const fileUploader = require('../config/cloudinary.config');
 const { route } = require('./auth.routes');
 const User = require('../models/User.model');
+const Comment = require("../models/Comment.model");
 
 const router = require('express').Router();
 
@@ -102,9 +103,24 @@ router.get('/allUsers', isLoggedIn, (req, res, next) => {
 router.get('/main/:id/details', (req, res, next) => {
   const { id } = req.params;
 
+  /*   Card.findById(id)
+      .populate('author comments')
+      .populate({
+        path: 'comments',
+        populate: {
+          path: 'author',
+          model: 'User',
+        },
+      })
+      .then((card) => res.render('main/cards/card-details', card))
+      .catch((err) => next(err));
+  });
+   */
   Card.findById(id)
+    .populate("comments")
     .then((card) => res.render('main/cards/card-details', card))
     .catch((err) => next(err));
 });
+
 
 module.exports = router;

@@ -1,0 +1,93 @@
+/* ----------------------------------------------Main page styles -------------------------------------------- */
+.main-page {
+  width: 100vw;
+  height: fit-content;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.greeting {
+  text-align: center;
+  color: cornsilk;
+  padding: 8vh 0;
+}
+
+
+.main-page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.card {
+  background: #833ab4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  border: 1px solid cornsilk;
+  border-radius: 1.5vw;
+  width: 20vw;
+  height: 50vh;
+  margin: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: cornsilk;
+}
+
+
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  width: 20vw;
+  height: 25vh;
+
+}
+
+.card-image img {
+  max-width: 100%;
+  max-height: 100%;
+
+}
+
+/* applied to every button in the main page*/
+.btn {
+  all: unset;
+  border: 1px solid cornsilk;
+  border-radius: 5px;
+  width: 5vw;
+  padding: 1vh 1vw;
+  text-align: center;
+  box-shadow: 1px 3px 4px cornsilk;
+}
+
+
+
+.btn:hover {
+  border: 1px solid #0F2027;
+  background-color: cornsilk;
+  color: #0F2027
+}
+
+
+.btn a {
+  text-decoration: none;
+  color: #0F2027;
+}
+
+.btn a:hover {
+  color: #0F2027
+}
