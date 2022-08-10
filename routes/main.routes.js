@@ -41,6 +41,8 @@ router.post(
   }
 );
 
+
+
 router.get('/main/:id/edit', (req, res, next) => {
   const { id } = req.params;
 
@@ -69,6 +71,29 @@ router.post(
       .catch((err) => next(err));
   }
 );
+
+router.post("/cards/:id/details",
+  fileUploader.single("walkPhotoUrl"),
+  (req, res, next) => {
+    const { id } = req.params;
+    const { previousUrl } = req.body;
+    let walkPhotoUrl;
+
+    if (req.file) {
+      walkPhotoUrl = req.file.path;
+    } else {
+      walkPhotoUrl = previousUrl;
+    }
+
+    Card.findByIdAndUpdate(id, { walkPhotoUrl })
+      .then((newPhoto) => {
+        $push: { walkPhotoUrl: newPhoto._id }
+      })
+      .then(() => res.redirect("/main/cards/card-details", id))
+
+      .catch((err) => next(err));
+  })
+
 
 router.post('/main/:id/delete', (req, res, next) => {
   const { id } = req.params;
@@ -103,24 +128,20 @@ router.get('/allUsers', isLoggedIn, (req, res, next) => {
 router.get('/main/:id/details', (req, res, next) => {
   const { id } = req.params;
 
-  /*   Card.findById(id)
-      .populate('author comments')
-      .populate({
-        path: 'comments',
-        populate: {
-          path: 'author',
-          model: 'User',
-        },
-      })
-      .then((card) => res.render('main/cards/card-details', card))
-      .catch((err) => next(err));
-  });
-   */
   Card.findById(id)
-    .populate("comments")
+    .populate('comments')
+    .populate({
+      path: 'comments',
+      populate: {
+        path: 'author',
+        model: 'User',
+      },
+    })
     .then((card) => res.render('main/cards/card-details', card))
     .catch((err) => next(err));
 });
+
+
 
 
 module.exports = router;

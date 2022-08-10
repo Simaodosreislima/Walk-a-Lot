@@ -31,31 +31,25 @@
   justify-content: space-evenly;
   border: 2px solid cornsilk;
   color: cornsilk;
-  box-shadow: 5px 7px 10px cornsilk;
   width: 25vw;
   height: 50vh;
   border-radius: 10%;
-  background: #0F2027;
+  background: #833ab4;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
 .form input {
-  border: 1px solid cornsilk;
+  border: 1px solid #0F2027;
   border-radius: 5px;
   height: 5vh;
   width: 15vw;
   color: cornsilk;
-  background: #0F2027;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: cornsilk;
 }
 
 .form input[type="text"],
@@ -65,7 +59,7 @@ input[type="email"] {
 }
 
 .form::placeholder {
-  color: cornsilk;
+  color: black;
   opacity: 0.5;
   text-align: center;
 }

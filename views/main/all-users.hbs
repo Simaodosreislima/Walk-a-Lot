@@ -1,9 +1,12 @@
-{{#each users}}
-<div
-  style="border: 1px solid black; display:flex; flex-direction: column; align-items: center; width: 50vw; height: auto;">
-  <img src="{{profileImg}}" alt="profile-img">
-  <span>{{firstName}} {{lastName}}</span>
+<div class="all-cards-container">
+  {{#each users}}
+  <div class="card">
+    <div class="card-image">
+      <img src="{{profileImg}}" alt="profile-img">
+    </div>
+    <span>{{firstName}} {{lastName}}</span>
+    <button class="btn"><a href={{!-- '/main/{{_id}}/details' --}}>View Details</a></button>
 
-
+  </div>
+  {{/each}}
 </div>
-{{/each}}

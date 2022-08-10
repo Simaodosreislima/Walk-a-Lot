@@ -18,7 +18,7 @@ const cardSchema = new Schema(
         'https://i.pinimg.com/originals/62/4b/bb/624bbbf5b3c8a293950c8ed24a0c4eef.jpg',
     },
     comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }],
-    /*     walkPhotoUrl: [type: Schema.Types.ObjectId, ref: "WalkPhoto"] */
+    walkPhotoUrl: [String],
   },
   {
     timestamps: true,
