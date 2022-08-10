@@ -1,16 +1,18 @@
-<div class="all-cards-container">
 
-<h1>Profile</h1>
 
-<h4>First Name: {{firstName}}</h4>
-<h4>Last Name: {{lastName}}</h4>
-<h4>Username: {{username}}</h4>
-<h4>Email: {{email}}</h4>
+<h1 class="greeting">{{firstName}} {{lastName}}</h1>
 
+<div class="profile-container">
+
+<div class="profile">
+  <div class="profile-image">
 <img src='{{profileImg}}' />
+  </div>
 <br>
-<button><a href="/profile/{{_id}}/edit">Edit Profile</a></button>
-<form action="/profile/{{_id}}/delete" method="post">
-  <button>Delete Profile</button>
-
 </div>
+<hr>
+<div class="edit-delete-profile">
+<button class="profileBtn"><a href="/profile/{{_id}}/edit">Edit Profile</a></button>
+<form action="/profile/{{_id}}/delete" method="post">
+  <button class="profileBtn">Delete Profile</button>
+  </div>
