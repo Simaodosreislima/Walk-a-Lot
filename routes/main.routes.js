@@ -75,27 +75,22 @@ router.post(
 
 router.post(
   '/cards/:id/details',
-  fileUploader.single('walkPhotoUrl'),
+  fileUploader.single('imageUrl'),
   isLoggedIn,
   (req, res, next) => {
     const { id } = req.params;
-    const { previousUrl } = req.body;
-    let walkPhotoUrl;
+    let image;
 
     if (req.file) {
-      walkPhotoUrl = req.file.path;
+      image = req.file.path;
     } else {
-      walkPhotoUrl = previousUrl;
+      res.redirect(`/main/${id}/details`)
     }
-
-    Card.findByIdAndUpdate(id, { walkPhotoUrl })
-      .then((newPhoto) => {
-        $push: {
-          walkPhotoUrl: newPhoto._id;
-        }
-      })
-      .then(() => res.redirect('/main/cards/card-details', id))
-
+    console.log(image)
+    Card.findByIdAndUpdate(id, {
+      $push: { walkPhotoUrl: image }
+    })
+      .then(() => res.redirect(`/main/${id}/details`))
       .catch((err) => next(err));
   }
 );

@@ -44,7 +44,7 @@
     <button type='submit'>Comment</button>
   </form>
 
-  <form action="/cards/{{this._id}}/details" method="post">
-    <input type="file" name="walkPhotoUrl" id="walkPhotoUrl">
+  <form action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
+    <input type="file" name="imageUrl" id="imageUrl">
     <button type="submit">Upload Photo</button>
   </form>
