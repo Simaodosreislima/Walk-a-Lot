@@ -48,7 +48,7 @@
   border-radius: 5px;
   height: 5vh;
   width: 15vw;
-  color: cornsilk;
+  color: #0F2027;
   background-color: cornsilk;
 }
 
@@ -71,11 +71,12 @@ input[type="email"] {
   width: 5vw;
   padding: 1vh 1vw;
   text-align: center;
+  color: #0F2027;
   box-shadow: 1px 3px 4px cornsilk;
 }
 
 .form button:hover {
-  border: 1px solid lightsteelblue;
+  border: 1px solid #0F2027;
   background-color: cornsilk;
   color: #0F2027;
 }

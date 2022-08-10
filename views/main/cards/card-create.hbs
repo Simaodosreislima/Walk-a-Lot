@@ -1,16 +1,19 @@
-<div>
-  <form action="/cards/create" method="post" enctype="multipart/form-data">
-    <label for="title"> Title: </label>
-    <input type="text" name="title" id="title">
+<h1 class="greeting">Create new walk</h1>
+<div class="card-create-container ">
+  <div class="card-create-form ">
+    <form action="/cards/create" method="post" enctype="multipart/form-data">
+      <label for="title"> Title: </label>
+      <input type="text" name="title" id="title">
 
-    <label for="description"> Description: </label>
-    <textarea name="description" id="description" cols="30" rows="10"></textarea>
-
-
-    <label for="cardImageUrl"> Card Image: </label>
-    <input type="file" name="cardImageUrl" id="cardImageUrl">
+      <label for="description"> Description: </label>
+      <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
 
-    <button type="submit">Create walk</button>
-  </form>
+      <label for="cardImageUrl"> Card Image: </label>
+      <input type="file" name="cardImageUrl" id="cardImageUrl">
+
+
+      <button type="submit">Create walk</button>
+    </form>
+  </div>
 </div>

@@ -41,7 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  /*  align-items: center; */
   color: cornsilk;
 }
 
@@ -50,7 +50,7 @@ body {
 .card-image {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  /*   align-items: flex-start; */
   overflow: hidden;
   width: 20vw;
   height: 25vh;
