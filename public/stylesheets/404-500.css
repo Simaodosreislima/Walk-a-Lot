@@ -1,0 +1,16 @@
+.errors {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.errors h1,
+h2 {
+  padding: 10px;
+}
+
+.errors img {
+  width: 80vw;
+}
