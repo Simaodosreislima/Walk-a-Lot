@@ -1,60 +1,76 @@
-<div {{!-- class="card" --}}>
-  <img class="card-image" src='{{cardImageUrl}}' alt='{{title}}' />
-  <div>
-    <h5>{{title}}</h5>
-    <p>{{this.description}}</p>
-    <button><a href='/main/{{this._id}}/edit'>Edit Walk</a></button>
-    <form action='/main/{{this._id}}/delete' method='post'>
-      <button>Delete walk</button>
+<div class="flex">
+  <div class="current-walk">
+    <div class="current-walk-title">
+      <h5>{{title}}</h5>
+    </div>
+    <div class="current-walk-card">
+
+      <img class="card-image" src='{{cardImageUrl}}' alt='{{title}}' />
+
+      {{!-- <p>{{this.description}}</p> --}}
+
+      </form>
+
+    </div>
+    <div class="edit-delete-buttons">
+      <button class="edit-button"><a href='/main/{{this._id}}/edit'>Edit Walk</a></button>
+      <form action='/main/{{this._id}}/delete' method='post'>
+        <button class="delete-button">Delete walk</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="comment-section">
+    <form class="comment-form" action='/cards/{{this._id}}/comment' method='post'>
+      {{!-- <div class="comment-title">
+        <h3>Comments</h3>
+      </div> --}}
+      <div class="comment-body">
+        {{#unless comments}}
+        <h6>No comments on this post yet!</h6>
+        {{/unless}}
+        <ul class="comment-body-ul">
+
+          {{#each comments}}
+
+          <li>
+
+            {{this.author.username}}
+            :
+            {{this.content}}
+          </li>
+          <br>
+          {{/each}}
+        </ul>
+        <div class="comment-textarea-button">
+
+          <textarea class="textarea" name='content' id='content' cols='10' rows='50'
+            placeholder="Share your thoughts about this route"></textarea>
+          <button class="share-button" type='submit'>Share</button>
+        </div>
+      </div>
 
     </form>
 
+
+
+
   </div>
-  {{!--
+</div>
 
-  <div>
-    {{content}}
-    <hr />
-    by:
-    {{author.username}}
-  </div> --}}
-
-  {{#unless comments}}
-  <h6>No comments on this post yet!</h6>
-  {{/unless}}
-  <ul>
-
-    {{#each comments}}
-    <li>
-
-      {{this.author.username}}
-      -
-      {{this.content}}
-    </li>
-    {{/each}}
-  </ul>
-
-  <h3>Add a comment</h3>
-  <form action='/cards/{{this._id}}/comment' method='post'>
-    {{!-- <label for='author'>Author</label>
-    <input type='text' name='authorName' id='author' /> --}}
-
-    <textarea name='content' id='content' cols='30' rows='10'></textarea>
-
-    <button type='submit'>Comment</button>
-  </form>
-
+<div class="flex-2">
   <form action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
     <input type="file" name="imageUrl" id="imageUrl">
     <button type="submit">Upload Photo</button>
+
   </form>
-
-
-
-      {{#each walkPhotoUrl}}
-    <div class="card">
-      <div class="card-image">
-        <img src='{{this}}' />
-      </div>
+  {{#each walkPhotoUrl}}
+  <div class="card">
+    <div class="card-image">
+      <img src='{{this}}' />
     </div>
-    {{/each}}
+  </div>
+  {{/each}}
+</div>

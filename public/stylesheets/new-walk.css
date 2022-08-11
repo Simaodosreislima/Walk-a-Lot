@@ -62,7 +62,7 @@ textarea {
   padding: 1vh 1vw;
   margin: 10px;
   text-align: center;
-  color: white;
+  color: cornsilk;
   background-color: #ea4c89;
 }
 
@@ -74,5 +74,5 @@ textarea {
 .create-walk-btn a,
 .choose-photo a {
   text-decoration: none;
-  color: white;
+  color: cornsilk;
 }

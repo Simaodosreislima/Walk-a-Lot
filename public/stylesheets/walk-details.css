@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+.flex {
+  height: 50vh;
+  padding: 4vh 2vw;
+  background-color: cornsilk;
+  border: 1px solid #0F2027;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.flex-2 {
+  height: 50vh;
+  padding: 4vh 2vw;
+  background-color: royalblue;
+  border: 1px solid #0F2027;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.current-walk,
+.comment-section {
+  height: 45vh;
+}
+
+.current-walk {
+  min-height: 100%;
+  gap: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid royalblue;
+  border-radius: 15px;
+  background-color: cornsilk;
+}
+
+
+.current-walk-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: royalblue;
+}
+
+.current-walk-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: royalblue;
+}
+
+
+
+.edit-delete-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 5vh;
+}
+
+.edit-button,
+.delete-button,
+.share-button {
+  all: unset;
+  border: 1px solid royalblue;
+  border-radius: 5px;
+  width: 6vw;
+  padding: 1vh 1vw;
+  text-align: center;
+  color: royalblue;
+}
+
+.edit-button a {
+  width: 100%;
+  text-decoration: none;
+  color: royalblue;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.share-button:hover {
+  color: cornsilk;
+  background-color: royalblue;
+  border: 1px solid #0F2027
+}
+
+.edit-button a:hover {
+  color: cornsilk;
+  background-color: royalblue;
+}
+
+.comment-section {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.comment-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-title {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: royalblue;
+}
+
+.comment-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: cornsilk;
+
+}
+
+.comment-body-ul {
+  background-color: royalblue;
+  border: 2px solid #0F2027;
+  border-radius: 5px;
+  list-style-type: none;
+  height: 40vh;
+  width: 80%
+}
+
+.comment-textarea-button {
+  padding-top: 2vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.textarea {
+  padding-top: 1vh;
+  border: 2px solid royalblue;
+  width: 100%;
+}
