@@ -188,9 +188,6 @@
 }
 
 
-input[type="file"] {
-  display: none;
-}
 
 .photo-size {
   min-width: 10rem;
@@ -200,6 +197,11 @@ input[type="file"] {
   border: 2px solid #f2f2f2;
   border-radius: 15px;
   margin: 20px;
+}
+
+
+input[type="file"] {
+  display: none;
 }
 
 .upload-btn {
