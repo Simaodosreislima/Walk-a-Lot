@@ -2,10 +2,12 @@
   <h1 class='greeting'>Hi {{firstName}}!</h1>
   <div class='all-cards-container'>
     <span class='card'>
-      <img
-        class='plus-image'
-        src='https://res.cloudinary.com/dvzekm9zq/image/upload/v1660140017/white-plus-sign_ug9vze.png'
-      />
+      <a class='style-override' href='/cards/create'>
+        <img
+          class='plus-image'
+          src='https://res.cloudinary.com/dvzekm9zq/image/upload/v1660140017/white-plus-sign_ug9vze.png'
+        />
+      </a>
       <button class='profileBtn'><a href='/cards/create'>
 
           New Walk</a></button>
@@ -16,8 +18,8 @@
         <div class='card-image'>
           <img src='{{cardImageUrl}}' alt='{{title}}' />
         </div>
-        <h5>{{title}}</h5>
-        <span>{{description}}</span>
+        <h5 class='title'>{{title}}</h5>
+        <span class='description'>{{description}}</span>
         <button class='profileBtn'><a href='/main/{{_id}}/details'>View Details</a></button>
         {{!-- <form action='/main/{{_id}}/delete' method='post'>
         <button>Delete walk</button>

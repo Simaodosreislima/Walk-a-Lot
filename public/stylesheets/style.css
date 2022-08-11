@@ -10,8 +10,6 @@
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #fe8c00; /* fallback for old browsers */
-  background: #870000; /* fallback for old browsers */
   background: #41295a; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,

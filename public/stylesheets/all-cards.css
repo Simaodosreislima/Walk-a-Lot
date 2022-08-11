@@ -2,12 +2,17 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: #0f2027;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #42275a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #734b6d,
+    #42275a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #734b6d,
+    #42275a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .greeting {
@@ -89,7 +94,20 @@ body {
   color: #0f2027;
 }
 
+.style-override {
+  padding-left: 25%;
+}
+
 .plus-image {
-  width: 50%;
+  width: 70%;
   height: auto;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: lighter;
+}
+
+.description {
+  font-weight: lighter;
 }
