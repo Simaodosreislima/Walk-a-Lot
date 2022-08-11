@@ -61,16 +61,18 @@
 </div>
 
 <div class="flex-2">
-  <form action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
-    <input type="file" name="imageUrl" id="imageUrl">
-    <button type="submit">Upload Photo</button>
-
-  </form>
-  {{#each walkPhotoUrl}}
-  <div class="card">
-    <div class="card-image">
-      <img src='{{this}}' />
-    </div>
+  <div class="upload-photo-box">
+    <form class="upload-photo" action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
+      <input type="file" name="imageUrl" id="imageUrl">
+      <button type="submit">Upload Photo</button>
+    </form>
   </div>
-  {{/each}}
+
+  <div class="uploaded-photo-box">
+    {{#each walkPhotoUrl}}
+
+    <img class="card-image" src='{{this}}' />
+
+    {{/each}}
+  </div>
 </div>
