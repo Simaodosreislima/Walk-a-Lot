@@ -12,17 +12,16 @@
   justify-content: center;
   height: 100vh;
   padding-top: 25vh;
-  background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #42275a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #734b6d,
+      #42275a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #734b6d,
+      #42275a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .form {
@@ -30,22 +29,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid cornsilk;
-  color: cornsilk;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
   width: 25vw;
   height: 50vh;
   border-radius: 10%;
-  background: #fe8c00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fe8c00;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #f83600,
+      #fe8c00);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #f83600,
+      #fe8c00);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .form input {
@@ -54,7 +52,7 @@
   height: 5vh;
   width: 15vw;
   color: #0f2027;
-  background-color: cornsilk;
+  background-color: #f2f2f2;
 }
 
 .form input[type='text'],
@@ -69,19 +67,19 @@ input[type='email'] {
   text-align: center;
 }
 
-.form button {
+/* .form button {
   all: unset;
-  border: 1px solid cornsilk;
+  border: 1px solid #f2f2f2;
   border-radius: 5px;
   width: 5vw;
   padding: 1vh 1vw;
   text-align: center;
   color: #0f2027;
-  box-shadow: 1px 3px 4px cornsilk;
+  box-shadow: 1px 3px 4px #f2f2f2;
 }
 
 .form button:hover {
   border: 1px solid #0f2027;
-  background-color: cornsilk;
+  background-color: #f2f2f2;
   color: #0f2027;
-}
+} */
