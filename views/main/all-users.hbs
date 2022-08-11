@@ -1,14 +1,14 @@
-<h1 class="greeting">Connect with other users</h1>
+<h1 class='greeting'>Connect with other users</h1>
 
-<div class="all-cards-container">
+<div class='all-cards-container'>
   {{#each users}}
-  <div class="card">
-    <div class="card-image">
-      <img src="{{profileImg}}" alt="profile-img">
-    </div>
-    <span>{{firstName}} {{lastName}}</span>
-    <button class="btn"><a href={{!-- '/main/{{_id}}/details' --}}>View Details</a></button>
+    <div class='card'>
+      <div class='card-image'>
+        <img src='{{this.profileImg}}' alt='profile-img' />
+      </div>
+      <span>{{this.firstName}} {{this.lastName}}</span>
+      <button class='profileBtn'><a href='/profile/{{this._id}}'>View Details</a></button>
 
-  </div>
+    </div>
   {{/each}}
 </div>

@@ -84,11 +84,11 @@ router.post(
     if (req.file) {
       image = req.file.path;
     } else {
-      res.redirect(`/main/${id}/details`)
+      res.redirect(`/main/${id}/details`);
     }
-    console.log(image)
+    console.log(image);
     Card.findByIdAndUpdate(id, {
-      $push: { walkPhotoUrl: image }
+      $push: { walkPhotoUrl: image },
     })
       .then(() => res.redirect(`/main/${id}/details`))
       .catch((err) => next(err));
@@ -138,6 +138,17 @@ router.get('/main/:id/details', isLoggedIn, (req, res, next) => {
       },
     })
     .then((card) => res.render('main/cards/card-details', card))
+    .catch((err) => next(err));
+});
+
+router.get('/profile/:userId', isLoggedIn, (req, res, next) => {
+  const { userId } = req.params;
+
+  User.findById(userId)
+    .populate('walkCards')
+    .then((userFound) => {
+      res.render('main/user-details', userFound);
+    })
     .catch((err) => next(err));
 });
 

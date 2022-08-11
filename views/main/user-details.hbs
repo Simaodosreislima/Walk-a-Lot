@@ -1,0 +1,23 @@
+<h1 class='greeting'>{{this.firstName}} {{this.lastName}} Walks</h1>
+
+<div class='all-cards-container'>
+  <div class='card'>
+    <img class='card-image' src='{{this.profileImg}}' />
+  </div>
+</div>
+
+{{#each walkCards}}
+  <div class='card'>
+    <div class='card-image'>
+      <img src='{{this.cardImageUrl}}' alt='{{this.title}}' />
+    </div>
+    <h5>{{this.title}}</h5>
+    <span>{{this.description}}</span>
+    <button class='btn'><a href='/main/{{_id}}/details'>View Details</a></button>
+    {{!-- <form action='/main/{{_id}}/delete' method='post'>
+        <button>Delete walk</button>
+
+      </form> --}}
+
+  </div>
+{{/each}}

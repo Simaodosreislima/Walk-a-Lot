@@ -2,11 +2,11 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: #0F2027;
+  background: #0f2027;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: -webkit-linear-gradient(to right, #2c5364, #203a43, #0f2027);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -16,13 +16,11 @@ body {
   padding: 8vh 0;
 }
 
-
 .all-cards-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-
 }
 
 .card {
@@ -45,8 +43,6 @@ body {
   color: cornsilk;
 }
 
-
-
 .card-image {
   display: flex;
   justify-content: center;
@@ -54,13 +50,17 @@ body {
   overflow: hidden;
   width: 20vw;
   height: 25vh;
-
 }
 
 .card-image img {
-  max-width: 100%;
-  max-height: 100%;
-
+  min-width: 15rem;
+  max-width: 16rem;
+  min-height: 10rem;
+  max-height: 11rem;
+  border: 2px solid cornsilk;
+  border-radius: 15px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* applied to every button in the main page*/
@@ -74,20 +74,22 @@ body {
   box-shadow: 1px 3px 4px cornsilk;
 }
 
-
-
 .btn:hover {
-  border: 1px solid #0F2027;
+  border: 1px solid #0f2027;
   background-color: cornsilk;
-  color: #0F2027
+  color: #0f2027;
 }
-
 
 .btn a {
   text-decoration: none;
-  color: #0F2027;
+  color: #0f2027;
 }
 
 .btn a:hover {
-  color: #0F2027
+  color: #0f2027;
+}
+
+.plus-image {
+  width: 50%;
+  height: auto;
 }
