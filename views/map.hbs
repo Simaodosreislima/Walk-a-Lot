@@ -3,41 +3,39 @@
 
   <aside>
     <form action='/map/create' method='post'>
-
-      <label for='name'>Name</label>
-      <input type='text' name='name' />
-
-      <label for='description'>Description</label>
-      <input type='text' name='description' />
-
-      <label>Address</label>
+      <h1 style='color: white'>Start Point</h1>
       <input type='text' name='latitude' id='lat' />
       <input type='text' name='longitude' id='lng' />
-      <button type='submit'>Submit</button>
+      <button class='profileBtn' type='submit'>Submit</button>
+    </form>
+    <form action='/map/create' method='post'>
+      <h1 style='color: white'>End Point</h1>
+      <input type='text' name='latitude' id='lat' />
+      <input type='text' name='longitude' id='lng' />
+      <button class='profileBtn' type='submit'>Submit</button>
     </form>
 
-    {{#each places}}
+    <button class='mapBtn' type='submit'>GET WALK ROUTE</button>
+
+    {{!--     {{#each places}}
       <p><b class='place-name'>{{name}}</b>: {{description}}</p>
       <input
         type='text'
         class='dbLng'
-        value='{{location.coordinates.0}}'
+        value='{{location.coordinates.[0]}}'
         hidden
       />
       <input
         type='text'
         class='dbLat'
-        value='{{location.coordinates.1}}'
+        value='{{location.coordinates.[1]}}'
         hidden
       />
-    {{/each}}
+    {{/each}} --}}
   </aside>
 
 </div>
 
-<script
-  async
-  src='https://maps.googleapis.com/maps/api/js?key={{mapsKey}}&callback=initMap'
->
+<script src='https://maps.googleapis.com/maps/api/js?key={{mapsKey}}'>
 </script>
 <script src='js/maps.js'></script>

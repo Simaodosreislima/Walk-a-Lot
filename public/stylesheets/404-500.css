@@ -1,14 +1,21 @@
 .errors {
   width: 100vw;
   height: 100vh;
-  background: #f2f2f2;
+  background: white;
   text-align: center;
   padding: 20px;
 }
 
-.errors h1,
-h2 {
+.errors h1 {
   padding: 10px;
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 6em;
+}
+
+.errors h2 {
+  padding: 10px;
+  font-family: 'Rubik Dirt', cursive;
+  font-size: 2em;
 }
 
 .errors img {

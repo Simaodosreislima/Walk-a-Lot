@@ -1,42 +1,50 @@
 <html lang='en'>
 
-<head>
-  <meta charset='UTF-8' />
-  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <meta http-equiv='X-UA-Compatible' content='ie=edge' />
-  <title>{{appTitle}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel='stylesheet' href='/stylesheets/signup-login.css' />
-  <link rel='stylesheet' href='/stylesheets/all-cards.css' />
-  <link rel='stylesheet' href='/stylesheets/new-walk.css' />
-  <link rel='stylesheet' href='/stylesheets/walk-details.css' />
-  <link rel='stylesheet' href='/stylesheets/profile.css' />
-  <link rel='stylesheet' href='/stylesheets/edit-profile.css' />
-  <link rel='stylesheet' href='/stylesheets/404-500.css' />
-</head>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta http-equiv='X-UA-Compatible' content='ie=edge' />
+    <title>{{appTitle}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/signup-login.css' />
+    <link rel='stylesheet' href='/stylesheets/all-cards.css' />
+    <link rel='stylesheet' href='/stylesheets/new-walk.css' />
+    <link rel='stylesheet' href='/stylesheets/walk-details.css' />
+    <link rel='stylesheet' href='/stylesheets/profile.css' />
+    <link rel='stylesheet' href='/stylesheets/edit-profile.css' />
+    <link rel='stylesheet' href='/stylesheets/404-500.css' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap'
+      rel='stylesheet'
+    />
+  </head>
 
-<body>
+  <body>
 
-  <nav>
-    <ul class="ul-list">
-      <li><a href='/'><img class='logoImg'
-            src='https://res.cloudinary.com/dvzekm9zq/image/upload/v1660067817/cards/walk-a-lot-logo_vyx6q2.png'
-            alt='Walk a Lot Logo' /></a></li>
-      {{#if loggedInUser}}
-      <li><a href='/main'>My walks</a></li>
-      <li><a href='/profile'> My Profile</a></li>
-      <li><a href='/allUsers'>All Users</a></li>
-      <li><a href='/logout'>Logout</a></li>
-      {{else}}
-      <li><a href='/signup'>Signup</a></li>
-      <li><a href='/login'>Login</a></li>
-      {{/if}}
-    </ul>
-  </nav>
+    <nav>
+      <ul class='ul-list'>
+        <li><a href='/'><img
+              class='logoImg'
+              src='https://res.cloudinary.com/dvzekm9zq/image/upload/v1660067817/cards/walk-a-lot-logo_vyx6q2.png'
+              alt='Walk a Lot Logo'
+            /></a></li>
+        {{#if loggedInUser}}
+          <li><a href='/main'>My walks</a></li>
+          <li><a href='/profile'> My Profile</a></li>
+          <li><a href='/allUsers'>All Users</a></li>
+          <li><a href='/logout'>Logout</a></li>
+        {{else}}
+          <li><a href='/signup'>Signup</a></li>
+          <li><a href='/login'>Login</a></li>
+        {{/if}}
+      </ul>
+    </nav>
 
-  {{{body}}}
+    {{{body}}}
 
-  <script src='/js/script.js'></script>
-</body>
+    <script src='/js/script.js'></script>
+  </body>
 
 </html>

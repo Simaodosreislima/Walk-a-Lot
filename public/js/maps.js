@@ -35,16 +35,17 @@ function initMap() {
       destination: 'Madrid, ES',
       travelMode: 'TRANSIT',
     };
-  
-    directionService.route(directionRequest, function (response, status) {
-      if (status === 'OK') {
-        directionDisplay.setDirections(response);
-      } else {
-        window.alert('No direction found');
-      }
-    });
-  
-    directionDisplay.setMap(map); */
+    */
+
+  /*   directionService.route(directionRequest, function (response, status) {
+    if (status === 'OK') {
+      directionDisplay.setDirections(response);
+    } else {
+      window.alert('No direction found');
+    }
+  }); */
+
+  directionDisplay.setMap(map);
 
   map.addListener('click', (mapMouseEvent) => {
     const marker = new google.maps.Marker({

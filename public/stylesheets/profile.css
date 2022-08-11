@@ -14,13 +14,9 @@
 .profile {
   background: #fe8c00;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right,
-      #f83600,
-      #fe8c00);
+  background: -webkit-linear-gradient(to right, #f83600, #fe8c00);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right,
-      #f83600,
-      #fe8c00);
+  background: linear-gradient(to right, #f83600, #fe8c00);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   border: 1px solid #f2f2f2;
@@ -72,4 +68,26 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.mapBtn {
+  all: unset;
+  border: 1px solid #f2f2f2;
+  border-radius: 10px;
+  width: 10vw;
+  padding: 1vh 1vw;
+  margin: 10px;
+  text-align: center;
+  color: white;
+  /* applied to every button in the main page*/
+  background-color: #ea4c89;
+}
+
+.mapBtn:hover {
+  background-color: #f082ac;
+}
+
+.mapBtn a {
+  text-decoration: none;
+  color: white;
 }
