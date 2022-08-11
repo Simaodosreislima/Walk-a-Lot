@@ -61,13 +61,7 @@
 </div>
 
 <div class="flex-2">
-  <div class="upload-photo-box">
-    <form class="upload-photo" action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
-      <label class="choose-photo" for="imageUrl">Upload picture</label>
-      <input type="file" name="imageUrl" id="imageUrl">
-      <button class="upload-btn" type="submit">Upload Photo</button>
-    </form>
-  </div>
+  <h2>Walk photos</h2>
 
   <div class="uploaded-photo-box">
     {{#each walkPhotoUrl}}
@@ -75,5 +69,12 @@
     <img class="photo-size" src='{{this}}' />
 
     {{/each}}
+  </div>
+  <div class="upload-photo-box">
+    <form class="upload-photo" action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
+      <label class="upload-btn" for="imageUrl">Choose picture</label>
+      <input type="file" name="imageUrl" id="imageUrl">
+      <button class="upload-btn" type="submit">Upload picture</button>
+    </form>
   </div>
 </div>

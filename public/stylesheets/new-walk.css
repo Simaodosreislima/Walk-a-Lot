@@ -2,17 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #42275a;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #734b6d,
+      #42275a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #734b6d,
+      #42275a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-create-form form {
@@ -21,22 +20,21 @@
   align-content: center;
   align-items: center;
   justify-content: space-evenly;
-  border: 2px solid cornsilk;
-  color: cornsilk;
+  border: 2px solid #f2f2f2;
+  color: #f2f2f2;
   width: 25vw;
   height: 50vh;
   border-radius: 10%;
-  background: #fe8c00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fe8c00;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,
+      #f83600,
+      #fe8c00);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,
+      #f83600,
+      #fe8c00);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-create-form input[type='text'],
@@ -50,7 +48,7 @@ textarea {
   height: 5vh;
   width: 15vw;
   color: #0f2027;
-  background-color: cornsilk;
+  background-color: #f2f2f2;
 }
 
 .card-create-form input[type='file'] {
@@ -62,13 +60,13 @@ textarea {
 .choose-photo {
   top: 20vh;
   all: unset;
-  border: 1px solid cornsilk;
+  border: 1px solid #f2f2f2;
   border-radius: 10px;
   width: 5vw;
   padding: 1vh 1vw;
   margin: 10px;
   text-align: center;
-  color: cornsilk;
+  color: #f2f2f2;
   background-color: #ea4c89;
 }
 
@@ -80,5 +78,5 @@ textarea {
 .create-walk-btn a,
 .choose-photo a {
   text-decoration: none;
-  color: cornsilk;
+  color: #f2f2f2;
 }
