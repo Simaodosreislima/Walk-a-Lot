@@ -22,6 +22,7 @@ const capitalized = require('./utils/capitalized');
 const projectName = 'walkALot';
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.mapsKey = process.env.MAPS_KEY;
 
 // 👇 Start handling routes here
 const index = require('./routes/index.routes');
@@ -33,8 +34,11 @@ app.use('/', authRoutes);
 const mainRoutes = require('./routes/main.routes');
 app.use('/', mainRoutes);
 
-const commentRoutes = require("./routes/comment.routes")
-app.use("/", commentRoutes);
+const commentRoutes = require('./routes/comment.routes');
+app.use('/', commentRoutes);
+
+const mapRoutes = require('./routes/map.routes');
+app.use('/', mapRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require('./error-handling')(app);
