@@ -161,7 +161,6 @@
 
 
 .flex-2 {
-  /* height: 50vh; */
   padding: 4vh 2vw;
   background-color: royalblue;
   border: 1px solid #0F2027;
@@ -171,17 +170,6 @@
   align-items: center;
 }
 
-/* .upload-photo-box {
-  border: 2px solid cornsilk;
-  margin-bottom: 5vh;
-  width: 25vw;
-  height: 25vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 2vw;
-} */
 
 .upload-photo-box {
   display: flex;
@@ -195,13 +183,9 @@
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: flex-start;
-  overflow: scroll;
-  /* overflow-y: hidden;*/
+
 }
 
-/* .upload-photo-input {
-  display: none;
-} */
 
 input[type="file"] {
   display: none;
@@ -212,7 +196,24 @@ input[type="file"] {
   max-width: 11rem;
   min-height: 10rem;
   max-height: 11rem;
-  gap: 5rem;
   border: 2px solid cornsilk;
   border-radius: 15px;
+  margin: 20px;
+}
+
+.upload-btn {
+  top: 20vh;
+  all: unset;
+  border: 1px solid cornsilk;
+  border-radius: 10px;
+  width: 7vw;
+  padding: 1vh 1vw;
+  margin: 10px;
+  text-align: center;
+  color: cornsilk;
+  background-color: #ea4c89;
+}
+
+.upload-btn:hover {
+  background-color: #f082ac;
 }
