@@ -14,17 +14,6 @@
 
 }
 
-.flex-2 {
-  height: 50vh;
-  padding: 4vh 2vw;
-  background-color: royalblue;
-  border: 1px solid #0F2027;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-
-}
 
 .current-walk,
 .comment-section {
@@ -158,63 +147,72 @@
   width: 100%;
 }
 
-
-
-.flex-2 {
+/* .flex-2 {
   height: 50vh;
   padding: 4vh 2vw;
   background-color: royalblue;
   border: 1px solid #0F2027;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+
+.flex-2 {
+  /* height: 50vh; */
+  padding: 4vh 2vw;
+  background-color: royalblue;
+  border: 1px solid #0F2027;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
-.upload-photo-box {
+/* .upload-photo-box {
   border: 2px solid cornsilk;
-  background-color: yellow;
+  margin-bottom: 5vh;
   width: 25vw;
-}
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+} */
 
 .upload-photo-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploaded-photo-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: scroll;
+  /* overflow-y: hidden;*/
+}
+
+/* .upload-photo-input {
+  display: none;
+} */
+
+input[type="file"] {
+  display: none;
+}
+
+.photo-size {
+  min-width: 10rem;
+  max-width: 11rem;
+  min-height: 10rem;
+  max-height: 11rem;
+  gap: 5rem;
   border: 2px solid cornsilk;
-  background-color: red;
-  width: 70vw;
+  border-radius: 15px;
 }
-
-
-
-/* .walk-photo {
-  min-height: 100%;
-  gap: 2vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
-
-
-/* .current-walk-photo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  color: royalblue;
-  border: 2px solid cornsilk
-}
- */
-
-/* .current-walk-photo {
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  width: 20vw;
-  height: 25vh;
-}
-
-.current-walk-photo img {
-  max-width: 100%;
-  max-height: 100%;
-
-} */

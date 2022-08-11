@@ -2,17 +2,12 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: #42275a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #734b6d,
-    #42275a
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .greeting {
@@ -21,25 +16,22 @@ body {
   padding: 8vh 0;
 }
 
+
 .all-cards-container {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
+
 }
 
 .card {
-  background: #fe8c00; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f83600,
-    #fe8c00
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #833ab4;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   border: 1px solid cornsilk;
   border-radius: 1.5vw;
@@ -53,6 +45,8 @@ body {
   color: cornsilk;
 }
 
+
+
 .card-image {
   display: flex;
   justify-content: center;
@@ -60,11 +54,13 @@ body {
   overflow: hidden;
   width: 20vw;
   height: 25vh;
+
 }
 
 .card-image img {
   max-width: 100%;
   max-height: 100%;
+
 }
 
 /* applied to every button in the main page*/
@@ -78,17 +74,20 @@ body {
   box-shadow: 1px 3px 4px cornsilk;
 }
 
+
+
 .btn:hover {
-  border: 1px solid #0f2027;
+  border: 1px solid #0F2027;
   background-color: cornsilk;
-  color: #0f2027;
+  color: #0F2027
 }
+
 
 .btn a {
   text-decoration: none;
-  color: #0f2027;
+  color: #0F2027;
 }
 
 .btn a:hover {
-  color: #0f2027;
+  color: #0F2027
 }

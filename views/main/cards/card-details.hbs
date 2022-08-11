@@ -63,15 +63,16 @@
 <div class="flex-2">
   <div class="upload-photo-box">
     <form class="upload-photo" action="/cards/{{this._id}}/details" method="post" enctype="multipart/form-data">
+      <label class="choose-photo" for="imageUrl">Upload picture</label>
       <input type="file" name="imageUrl" id="imageUrl">
-      <button type="submit">Upload Photo</button>
+      <button class="create-walk-btn" type="submit">Upload Photo</button>
     </form>
   </div>
 
   <div class="uploaded-photo-box">
     {{#each walkPhotoUrl}}
 
-    <img class="card-image" src='{{this}}' />
+    <img class="photo-size" src='{{this}}' />
 
     {{/each}}
   </div>
