@@ -9,6 +9,6 @@ const placeSchema = {
   },
 };
 
-placeSchema.index({ location: '2dsphere' });
+/* placeSchema.index({ location: '2dsphere' }); */
 
 module.exports = model('Place', placeSchema);

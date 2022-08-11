@@ -2,13 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #0F2027;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #42275a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #734b6d,
+    #42275a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #734b6d,
+    #42275a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-create-form form {
@@ -22,34 +26,36 @@
   width: 25vw;
   height: 50vh;
   border-radius: 10%;
-  background: #833ab4;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #fe8c00; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f83600,
+    #fe8c00
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f83600,
+    #fe8c00
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
-.card-create-form input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="file"],
+.card-create-form input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='file'],
 textarea {
   text-align: center;
-  border: 1px solid #0F2027;
+  border: 1px solid #0f2027;
   border-radius: 5px;
   height: 5vh;
   width: 15vw;
-  color: #0F2027;
+  color: #0f2027;
   background-color: cornsilk;
 }
 
-
-.card-create-form input[type="file"] {
+.card-create-form input[type='file'] {
   display: none;
 }
-
 
 /*create walk button*/
 .create-walk-btn,
